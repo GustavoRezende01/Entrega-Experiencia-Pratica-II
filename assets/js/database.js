@@ -1,34 +1,39 @@
-// assets/js/database.js
-// Simulação de "banco de dados" de projetos (mutável em runtime)
+
 const projectsDB = [
-  {
-    id: 1,
-    title: "Educação Digital nas Comunidades",
-    description: "Aulas de informática básica e internet segura para jovens e adultos.",
-    category: "Educação",
-    volunteersNeeded: 10,
-    raised: 2500,
-    goal: 5000,
-    image: "https://images.unsplash.com/photo-1588075592446-2664c33813e0?auto=format&fit=crop&w=900&q=60"
-  },
-  {
-    id: 2,
-    title: "Reciclagem Consciente",
-    description: "Coleta seletiva e oficinas de reaproveitamento de materiais.",
-    category: "Sustentabilidade",
-    volunteersNeeded: 8,
-    raised: 3800,
-    goal: 8000,
-    image: "https://images.unsplash.com/photo-1593113598332-cd6a9a8c2584?auto=format&fit=crop&w=900&q=60"
-  },
-  {
-    id: 3,
-    title: "Conectando Gerações",
-    description: "Oficinas onde jovens ensinam idosos a usar smartphones e redes sociais.",
-    category: "Inclusão Social",
-    volunteersNeeded: 5,
-    raised: 1200,
-    goal: 3000,
-    image: "https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=900&q=60"
-  }
+    {
+        id: 1,
+        title: "Inclusão Digital para a Terceira Idade",
+        description: "Capacitamos idosos a usar smartphones e computadores para se conectarem com a família e acessarem serviços essenciais online.",
+      
+        image: "assets/imagens/pexels-matthiaszomer-339620.jpg", 
+        goal: 5000,
+        raised: 3750,
+        volunteersNeeded: 5,
+        category: "Educação",
+        tags: ["Idosos", "Tecnologia", "Inclusão Social"]
+    },
+    {
+        id: 2,
+        title: "Programação para Jovens",
+        description: "Oferecemos cursos de lógica de programação e desenvolvimento web para jovens de comunidades carentes, preparando-os para o mercado de trabalho.",
+        
+        image: "assets/imagens/pexels-rogerio-martins-300911-981619.jpg",
+        goal: 12000,
+        raised: 8200,
+        volunteersNeeded: 3,
+        category: "Empregabilidade",
+        tags: ["Jovens", "Educação", "Carreira"]
+    },
+    {
+        id: 3,
+        title: "Horta Comunitária Sustentável",
+        description: "Criamos e mantemos hortas em espaços urbanos, promovendo segurança alimentar e educação ambiental para a comunidade local.",
+        
+        image: "assets/imagens/pexels-kampus-7658822.jpg",
+        goal: 3500,
+        raised: 3500,
+        volunteersNeeded: 10,
+        category: "Meio Ambiente",
+        tags: ["Sustentabilidade", "Comunidade"]
+    }
 ];

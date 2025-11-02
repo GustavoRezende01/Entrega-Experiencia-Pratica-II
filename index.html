@@ -3,49 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ONG Conexão Solidária</title>
+    <meta name="description" content="Página inicial da ONG Conexão Solidária.">
+    <title>Conexão Solidária - Início</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
 <body>
+
     <header>
-        <h1>ONG Conexão Solidária</h1>
-        <nav>
-            <a href="index.html">Início</a>
-            <a href="projetos.html">Projetos</a>
-            <a href="cadastro.html">Seja Voluntário</a>
-        </nav>
-        <a href="#doe" class="btn-doe">💖 Doe Agora</a>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="nav-logo">Conexão Solidária</a>
+                
+                <div class="hamburger-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Início</a></li>
+                    <li class="dropdown">
+                        <a href="projetos.html">Projetos</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Projeto Água Limpa</a></li>
+                            <li><a href="#">Projeto Educação</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="cadastro.html">Seja um Voluntário</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section class="hero">
-        <h2>Conectando Pessoas para Transformar o Mundo</h2>
-        <p>Promovemos inclusão digital e oportunidades através da tecnologia e da educação.</p>
-        <a href="cadastro.html" class="btn">Quero Ajudar</a>
-    </section>
+    <main>
+        <div class="container">
+            <section class="mb-4">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h2>Nossa Missão: Conectar para Transformar</h2>
+                        <p>Acreditamos no poder da tecnologia e da educação para criar um futuro mais justo. Nossa missão é levar conhecimento e oportunidades para comunidades que mais precisam.</p>
+                        <a href="projetos.html" class="btn btn-primary">Conheça Nossos Projetos</a>
+                    </div>
+                    <div class="col-md-5">
+                        <img src="imagens/pexels-tobitnazar-3087286.jpg" alt="Crianças estudando" class="img-conteudo">
+                    </div>
+                </div>
+            </section>
 
-    <section class="sobre">
-        <h2>Quem Somos</h2>
-        <p>Desde 2015, a Conexão Solidária já impactou a vida de mais de 10.000 pessoas por meio de cursos, oficinas e doações de equipamentos. 
-        Nossa missão é conectar conhecimento a quem mais precisa.</p>
-    </section>
-    
-    <img src="assets/imagens/pexels-tobitnazar-3087286.jpg" alt="Crianças estudando" class="img-conteudo">
-
-    <section class="contato" id="doe">
-        <h2>Entre em Contato</h2>
-        <form>
-            <input type="text" placeholder="Seu nome" required>
-            <input type="email" placeholder="Seu e-mail" required>
-            <textarea placeholder="Sua mensagem..." required></textarea>
-            <button type="submit" class="btn">Enviar</button>
-        </form>
-    </section>
+            <section>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h2>Quem Somos</h2>
+                        <p>Desde 2015, a Conexão Solidária já impactou a vida de mais de 10.000 pessoas. Somos feitos de voluntários, doadores e pessoas que, como você, acreditam na mudança.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
 
     <footer>
-        <p>© 2025 ONG Conexão Solidária | Desenvolvido por alunos da Cruzeiro do Sul</p>
+        <div class="container">
+            <p>&copy; 2025 ONG Conexão Solidária. Todos os direitos reservados.</p>
+        </div>
     </footer>
 
+    <script src="assets/js/database.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
-<link rel="stylesheet" href="assets/css/style.css"> 

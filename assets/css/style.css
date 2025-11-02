@@ -1,96 +1,473 @@
-/* Fundo e base */
-body {
-    font-family: 'Poppins', sans-serif;
+/* assets/css/style.css - VERSÃO 2.0 (ENTREGA II) */
+
+/* --- 1. SISTEMA DE DESIGN (REQUISITO) --- */
+:root {
+    /* Paleta de 8 Cores (Requisito) */
+    --color-primary: #005a9c;
+    --color-primary-dark: #003d6b;
+    --color-primary-light: #e6f0f6;
+    --color-secondary: #ffd700;
+    --color-success: #28a745;
+    --color-danger: #dc3545;
+    --color-neutral-dark: #333;
+    --color-neutral-light: #f4f4f4;
+    --color-white: #ffffff;
+    --color-border: #dee2e6;
+
+    /* Tipografia Hierárquica (Requisito) */
+    --font-family-base: 'Helvetica Neue', Arial, sans-serif;
+    --font-size-xs: 0.75rem;  /* 12px */
+    --font-size-sm: 0.875rem; /* 14px */
+    --font-size-base: 1rem;   /* 16px */
+    --font-size-md: 1.25rem;  /* 20px */
+    --font-size-lg: 1.75rem;  /* 28px */
+    --font-size-xl: 2.25rem;  /* 36px */
+
+    /* Sistema de Espaçamento Modular (Requisito) */
+    --space-1: 0.25rem; /* 4px */
+    --space-2: 0.5rem;   /* 8px */
+    --space-3: 1rem;    /* 16px */
+    --space-4: 1.5rem;  /* 24px */
+    --space-5: 2rem;    /* 32px */
+    --space-6: 3rem;    /* 48px */
+
+    /* Outros */
+    --border-radius: 8px;
+    --box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* --- 2. RESET BÁSICO E CONFIGURAÇÕES GLOBAIS --- */
+* {
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #e0f7fa, #ffffff);
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--color-neutral-dark);
+    background-color: var(--color-neutral-light);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* --- 3. SISTEMA DE GRID (12 COLUNAS) E LAYOUT RESPONSIVO (REQUISITO) --- */
+
+/* O container principal */
+.container {
+    width: 100%;
+    padding-right: var(--space-3);
+    padding-left: var(--space-3);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* A linha que segura as colunas - usa Flexbox para alinhamento */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px; /* Compensa o padding das colunas */
+    margin-left: -15px;
+}
+
+/* Configuração de colunas - Mobile First (default) */
+/* Por padrão, todas as colunas ocupam 100% da largura */
+[class^="col-"] {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* --- 5 Breakpoints Responsivos (Requisito) --- */
+
+/* Small (sm) - a partir de 576px */
+@media (min-width: 576px) {
+    .container { max-width: 540px; }
+}
+
+/* Medium (md) - a partir de 768px */
+@media (min-width: 768px) {
+    .container { max-width: 720px; }
+    /* Gera as classes do grid de 12 colunas para medium */
+    .col-md-1 { flex: 0 0 8.333333%; max-width: 8.333333%; }
+    .col-md-2 { flex: 0 0 16.666667%; max-width: 16.666667%; }
+    .col-md-3 { flex: 0 0 25%; max-width: 25%; }
+    .col-md-4 { flex: 0 0 33.333333%; max-width: 33.333333%; }
+    .col-md-5 { flex: 0 0 41.666667%; max-width: 41.666667%; }
+    .col-md-6 { flex: 0 0 50%; max-width: 50%; }
+    .col-md-7 { flex: 0 0 58.333333%; max-width: 58.333333%; }
+    .col-md-8 { flex: 0 0 66.666667%; max-width: 66.666667%; }
+    .col-md-9 { flex: 0 0 75%; max-width: 75%; }
+    .col-md-10 { flex: 0 0 83.333333%; max-width: 83.333333%; }
+    .col-md-11 { flex: 0 0 91.666667%; max-width: 91.666667%; }
+    .col-md-12 { flex: 0 0 100%; max-width: 100%; }
+}
+
+/* Large (lg) - a partir de 992px */
+@media (min-width: 992px) {
+    .container { max-width: 960px; }
+    .col-lg-1 { flex: 0 0 8.333333%; max-width: 8.333333%; }
+    .col-lg-2 { flex: 0 0 16.666667%; max-width: 16.666667%; }
+    .col-lg-3 { flex: 0 0 25%; max-width: 25%; }
+    .col-lg-4 { flex: 0 0 33.333333%; max-width: 33.333333%; }
+    .col-lg-5 { flex: 0 0 41.666667%; max-width: 41.666667%; }
+    .col-lg-6 { flex: 0 0 50%; max-width: 50%; }
+    .col-lg-7 { flex: 0 0 58.333333%; max-width: 58.333333%; }
+    .col-lg-8 { flex: 0 0 66.666667%; max-width: 66.666667%; }
+    .col-lg-9 { flex: 0 0 75%; max-width: 75%; }
+    .col-lg-10 { flex: 0 0 83.333333%; max-width: 83.333333%; }
+    .col-lg-11 { flex: 0 0 91.666667%; max-width: 91.666667%; }
+    .col-lg-12 { flex: 0 0 100%; max-width: 100%; }
+}
+
+/* Extra large (xl) - a partir de 1200px */
+@media (min-width: 1200px) {
+    .container { max-width: 1140px; }
+}
+
+/* Extra extra large (xxl) - a partir de 1400px (5º breakpoint) */
+@media (min-width: 1400px) {
+    .container { max-width: 1320px; }
+}
+
+/* --- 4. LAYOUT GERAL (HEADER, MAIN, FOOTER) --- */
+/* Usando CSS Grid para o layout geral (Requisito) */
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Cabeçalho, conteúdo, rodapé */
+    min-height: 100vh;
+}
+
+header {
+    background: var(--color-white);
+    padding: var(--space-3) 0;
+    box-shadow: var(--box-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+main {
+    padding: var(--space-5) 0; /* Espaçamento modular */
+}
+
+footer {
+    background: var(--color-neutral-dark);
+    color: var(--color-white);
+    padding: var(--space-5) 0;
+    text-align: center;
+}
+
+/* --- 5. NAVEGAÇÃO SOFISTICADA (MENU HAMBÚRGUER) (REQUISITO) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: var(--font-size-md);
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex; /* Flexbox para alinhamento (Requisito) */
+}
+
+.nav-links li {
+    margin-left: var(--space-4);
+}
+
+.nav-links a {
+    color: var(--color-neutral-dark);
+    font-weight: bold;
+    padding-bottom: var(--space-2);
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+}
+
+/* Menu Hambúrguer */
+.hamburger-menu {
+    display: none; /* Escondido em telas grandes */
+    cursor: pointer;
+    font-size: var(--font-size-lg);
+    color: var(--color-primary);
+}
+
+/* Dropdown (Requisito) */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--color-white);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    padding: var(--space-2) 0;
+    list-style: none;
+    min-width: 180px;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: var(--space-2) var(--space-3);
+    color: var(--color-neutral-dark);
+    border-bottom: none;
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--color-primary-light);
+    border-bottom: none;
+}
+
+/* Mostra o dropdown no hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* CSS para o menu mobile */
+@media (max-width: 991.98px) {
+    .nav-links {
+        display: none; /* Esconde o menu normal */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px; /* Altura do header */
+        left: 0;
+        background: var(--color-white);
+        box-shadow: var(--box-shadow);
+        padding: var(--space-3);
+    }
+
+    .nav-links.active {
+        display: flex; /* Mostra o menu quando 'active' */
+    }
+
+    .nav-links li {
+        margin: var(--space-2) 0;
+    }
+
+    .hamburger-menu {
+        display: block; /* Mostra o ícone do hambúrguer */
+    }
+
+    /* Ajuste do dropdown no mobile */
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        padding-left: var(--space-3);
+    }
+}
+
+/* --- 6. COMPONENTES DE INTERFACE (REQUISITO) --- */
+
+/* Botões com Estados Visuais (Requisito) */
+.btn {
+    display: inline-block;
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--font-size-base);
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+/* Estados */
+.btn:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Cards Responsivos (Requisito) */
+.project-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    margin-bottom: var(--space-4); /* Espaçamento para o mobile */
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.project-card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card-body {
+    padding: var(--space-4);
+    flex-grow: 1; /* Faz o corpo crescer para preencher o espaço */
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card h3 {
+    font-size: var(--font-size-md);
+    margin-bottom: var(--space-2);
+}
+
+.project-card p {
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-3);
+}
+
+.project-card-footer {
+    margin-top: auto; /* Empurra o rodapé do card para baixo */
+}
+
+/* Badges e Tags (Requisito) */
+.tag-container {
+    margin-bottom: var(--space-3);
+}
+
+.badge {
+    display: inline-block;
+    padding: var(--space-1) var(--space-2);
+    font-size: var(--font-size-xs);
+    font-weight: bold;
+    border-radius: 4px;
+    background-color: var(--color-primary-light);
+    color: var(--color-primary-dark);
+    margin-right: var(--space-1);
+    margin-bottom: var(--space-1);
+}
+
+/* Formulários Estilizados com Validação Visual (Requisito) */
+.form-group {
+    margin-bottom: var(--space-3);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--space-2);
+    font-weight: bold;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--font-size-base);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+/* Validação Visual (Requisito) */
+.form-control:invalid:focus {
+    border-color: var(--color-danger);
+    box-shadow: 0 0 0 3px #fdd;
+}
+
+.form-control:valid:focus {
+    border-color: var(--color-success);
+    box-shadow: 0 0 0 3px #dfd;
+}
+
+/* Modal (Requisito) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: var(--color-white);
+    padding: var(--space-5);
+    border-radius: var(--border-radius);
+    text-align: center;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #aaa;
+}
+.close-button:hover {
     color: #333;
 }
 
-/* Cabeçalho */
-header {
-    background: #00796b;
-    color: white;
-    padding: 20px;
+
+/* --- 7. CLASSES UTILITÁRIAS --- */
+.text-center {
     text-align: center;
 }
-
-header h1 {
-    margin-bottom: 10px;
+.mt-5 {
+    margin-top: var(--space-5);
 }
-
-nav a {
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: #b2dfdb;
-}
-
-/* Botões */
-.btn, .btn-doe {
-    display: inline-block;
-    background: linear-gradient(90deg, #009688, #004d40);
-    color: white;
-    padding: 12px 24px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    margin: 10px 5px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-}
-
-.btn:hover, .btn-doe:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-}
-
-/* Seções */
-section {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.hero {
-    background: url('../missao-ong.jpg') center/cover no-repeat;
-    color: white;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
-    padding: 80px 20px;
-}
-
-form input, form textarea {
-    width: 90%;
-    max-width: 400px;
-    padding: 10px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    font-size: 1em;
-}
-
-form button {
-    margin-top: 10px;
-}
-
-/* Rodapé */
-footer {
-    background: #004d40;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    font-size: 0.9em;
-}
-/* --- ESTILO PARA AS IMAGENS DO CONTEÚDO --- */
-
-.img-conteudo {
-    max-width: 100%;  /* A imagem NUNCA vai ultrapassar a largura do seu container */
-    height: auto;     /* O navegador vai ajustar a altura automaticamente para não distorcer */
-    display: block;   /* Remove pequenos espaços em branco que podem aparecer embaixo da imagem */
-    margin-top: 1rem; /* Adiciona um espaço em cima da imagem */
-    border-radius: 8px; /* Deixa as bordas levemente arredondadas */
+.mb-4 {
+    margin-bottom: var(--space-4);
 }

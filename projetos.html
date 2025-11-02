@@ -3,35 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projetos | Conexão Solidária</title>
+    <meta name="description" content="Projetos da ONG Conexão Solidária.">
+    <title>Projetos - Conexão Solidária</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-<header>
-    <h1>Nossos Projetos</h1>
-    <nav>
-        <a href="index.html">Início</a>
-        <a href="cadastro.html">Seja Voluntário</a>
-    </nav>
-</header>
 
-<section class="projetos">
-    <div class="projeto">
-        <h3>Inclusão Digital</h3>
-        <p>Capacitação gratuita em informática básica e internet para jovens e crianças de comunidades carentes.</p>
-    </div>
-    <div class="projeto">
-        <h3>ReciclaTech</h3>
-        <p>Recolhemos e recuperamos computadores usados, doando para escolas e ONGs parceiras.</p>
-    </div>
-    <div class="projeto">
-        <h3>Conectando Sonhos</h3>
-        <p>Projetos de mentoria com voluntários de tecnologia, design e marketing para jovens aprendizes.</p>
-    </div>
-</section>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="nav-logo">Conexão Solidária</a>
+                <div class="hamburger-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Início</a></li>
+                    <li class="dropdown">
+                        <a href="projetos.html" class="active">Projetos</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Projeto Água Limpa</a></li>
+                            <li><a href="#">Projeto Educação</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="cadastro.html">Seja um Voluntário</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<footer>
-    <p>© 2025 Conexão Solidária | Todos os direitos reservados</p>
-</footer>
+    <main>
+        <div class="container">
+            <h2 class="text-center mb-4">Projetos em Destaque</h2>
+            
+            <div id="projects-container" class="row">
+                </div>
+        </div>
+    </main>
+
+    <div id="volunteer-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeVolunteerModal()">&times;</span>
+            <h2>Inscrição para Voluntariado</h2>
+            <p>Você selecionou o projeto: <strong id="modal-project-title"></strong></p>
+            <p>Para se candidatar, por favor, preencha nosso formulário de cadastro completo.</p>
+            <a href="cadastro.html" class="btn btn-primary">Ir para o Cadastro</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ONG Conexão Solidária. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/database.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
